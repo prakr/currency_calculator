@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Currency Calculator</title>
+    </h:head>
+    <h:body>
+        <h1>Currency Calculator</h1>
+
+        <h3>You can convert only between following different Currencies</h3>
+        <h3>USD,EUR,SEK,INR</h3>
+        <h4>American doller USD</h4>
+        <h4>Euros EUR</h4>
+        <h4>Indian Rupees INR</h4>
+        <h4>Swedish Krona SEK</h4>
+        <h:form>
+            <p>
+                <h:outputLabel for="amountConvert" value="Enter Amount "/>
+                <h:inputText id="amountConvert" value="#{acctManager.amountToConvert}"/>
+                <h:outputLabel for="convertFrom" value="Currency From "/>
+                <h:inputText id="convertFrom" value="#{acctManager.convertFrom}"/>
+                <h:outputLabel for="convertTo" value="Currency To"/>
+                <h:inputText id="convertTo" value="#{acctManager.convertTo}"/>
+            </p>
+            <p>
+                <h:commandButton value="Convert" action="#{acctManager.findCurrency}"/>
+            </p>
+            
+             <h:outputLabel for="outputTotal"  value="Total Money: "/>
+             <h:outputText id="outputTotal" value="#{acctManager.finalMoney}"/>
+            
+            <hr/>
+        </h:form>
+
+    </h:body>
+</html>
+
